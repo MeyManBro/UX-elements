@@ -24,15 +24,20 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-.grid {
+.grid,
+.inner-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   min-height: 100vh;
   grid-gap: 32px;
   padding: 64px;
 }
-.grid > div > *:not(:last-child) {
+.grid > div > *:not(:last-child),
+.inner-grid > div > *:not(:last-child) {
   margin-bottom: 18px;
+}
+.inner-grid {
+  min-height: initial;
 }
 /* buttons */
 .buttons {
@@ -49,25 +54,55 @@ body {
   justify-items: center;
   padding: 0 4vw;
   border-radius: var(--b_radius);
+}
+
+/* themes */
+.default {
   background-color: var(--light_dark);
   color: var(--ct_normal);
   box-shadow: var(--shadow);
 }
-.button__press {
+
+.default:hover,
+.hover {
+  background-color: var(--orange);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.press {
   box-shadow: var(--shadow_inset);
   color: #41414e;
   background-color: var(--bg_inset);
   font-weight: 200;
 }
-.button__hover {
-  background-color: var(--orange);
-  color: var(--white);
-}
-.button__active {
+.active {
   color: var(--text_or);
+  background-color: var(--light_dark);
+  box-shadow: var(--shadow);
 }
 
-.button__icon {
+.icon {
   width: var(--height-btn);
   padding: 0;
+  box-shadow: var(--shadow);
+}
+
+.input {
+  height: var(--height-btn);
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--ct_normal);
+  font-weight: 100;
+  border-radius: var(--b_radius);
+}
+.input::placeholder {
+  color: var(--ct_normal);
+  font-weight: 100;
+}
+
+.switch {
 }
